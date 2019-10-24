@@ -129,14 +129,14 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="dCQ-uT-iGx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.62856119990000003" green="0.95986971060000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.38496512174606323" green="0.55057978630065918" blue="0.75165194272994995" alpha="0.51171875" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.80664390330000002" green="0.96722501520000004" blue="0.99410706760000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" semanticContentAttribute="playback" barStyle="black" text="" placeholder="Поиск" id="d58-zs-1BA">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" red="0.62856119990000003" green="0.95986971060000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <color key="barTintColor" red="0.80664390330000002" green="0.96722501520000004" blue="0.99410706760000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="barTintColor" red="0.58529573678970337" green="0.77279669046401978" blue="0.98932641744613647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <offsetWrapper key="searchTextPositionAdjustment" horizontal="150" vertical="0.0"/>
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
@@ -193,7 +193,7 @@
                                         <constraint firstAttribute="bottom" secondItem="ep3-zP-LLJ" secondAttribute="bottom" constant="44.5" id="q77-B7-ORy"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.80738906481162775" green="0.96957772858024993" blue="0.99942404029999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.55936852834815243" green="0.76297225578593453" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="pkS-yf-1Wv" firstAttribute="top" secondItem="GmR-NZ-0Bw" secondAttribute="top" constant="14" id="L5t-L9-FXr"/>
                                     <constraint firstAttribute="bottom" secondItem="pkS-yf-1Wv" secondAttribute="bottom" constant="15" id="SKv-Ge-e2Q"/>
@@ -508,6 +508,7 @@
                                     <constraint firstItem="uoF-0L-3VK" firstAttribute="baseline" secondItem="Euj-qH-WzK" secondAttribute="baseline" id="8Fb-K0-bUA"/>
                                     <constraint firstAttribute="width" constant="414" id="Azn-Ed-B4T"/>
                                     <constraint firstAttribute="height" constant="82" id="JB5-vm-DJg"/>
+                                    <constraint firstAttribute="trailing" secondItem="4Qb-aw-ewG" secondAttribute="trailing" constant="25.5" id="WHg-DZ-bZq"/>
                                     <constraint firstItem="ZMC-pO-LYx" firstAttribute="leading" secondItem="4Fg-Rz-31k" secondAttribute="trailing" constant="47" id="ZFU-X8-YEL"/>
                                     <constraint firstItem="Dou-DT-NFt" firstAttribute="leading" secondItem="ZMC-pO-LYx" secondAttribute="trailing" constant="47" id="Zd7-f3-Woa"/>
                                     <constraint firstItem="uoF-0L-3VK" firstAttribute="baseline" secondItem="4Qb-aw-ewG" secondAttribute="baseline" id="bRo-g5-zmF"/>
@@ -560,6 +561,8 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="Ai0-xP-KXR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.58529573680000002" green="0.77279669049999999" blue="0.98932641740000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="0.60693860054016113" green="0.77947705984115601" blue="0.97819215059280396" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OwnerCell" rowHeight="135" id="ADs-fF-lqR" customClass="OwnerCell" customModule="Vkontakte" customModuleProvider="target">
                                 <rect key="frame" x="20" y="55.5" width="374" height="135"/>
@@ -810,7 +813,7 @@
                                         <constraint firstItem="GJT-of-qnQ" firstAttribute="top" secondItem="sNZ-aq-3Xr" secondAttribute="top" constant="14" id="wOW-OA-hnQ"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.80664390325546265" green="0.96722501516342163" blue="0.99410706758499146" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.58529573678970337" green="0.77279669046401978" blue="0.98932641744613647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="nameGroup" destination="RSS-k0-6QK" id="TuH-83-LoP"/>
                                     <outlet property="photoGroup" destination="GJT-of-qnQ" id="lMh-nV-UAi"/>
