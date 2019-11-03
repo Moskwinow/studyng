@@ -19,12 +19,11 @@ class FriendsController: UITableViewController {
     }
     
     fileprivate var notification: NotificationToken?
-    
     fileprivate var friendD: Results<Friend>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print(User.shared.id)
         fetching()
         fetchAll()
     }

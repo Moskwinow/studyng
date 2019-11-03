@@ -185,6 +185,7 @@ class NetworkService {
                 let newsJson = json["response"]["items"].arrayValue 
                 let newsPost = newsJson.map {News($0)}
                 let filter = newsPost.filter {$0.type == "post"}
+                print(newsPost)
                 completion(filter)
             case .failure(let error):
                 completion(error as! [News])

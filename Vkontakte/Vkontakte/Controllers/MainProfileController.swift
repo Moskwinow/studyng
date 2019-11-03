@@ -10,6 +10,7 @@ import UIKit
 import RealmSwift
 
 class MainProfileController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
     @IBOutlet weak var countFriendsLabel: UILabel!
     @IBOutlet weak var countGroupsLabel: UILabel!
     @IBOutlet weak var countAudiosLabel: UILabel!
@@ -18,12 +19,14 @@ class MainProfileController: UIViewController, UITableViewDelegate, UITableViewD
     fileprivate var notification: NotificationToken?
     fileprivate var profile: Results<Profile>?
     @IBOutlet weak var tableViewProf: UITableView!
+    @IBOutlet weak var wallTableView: UITableView!
     
     @IBOutlet weak var profPhoto: UIImageView!
     
     @IBOutlet weak var profName: UILabel!
     
-  
+    var wall = [Wall]()
+    
     var id: Int = 0
     var name: String = ""
     var photo: String = ""
@@ -33,9 +36,20 @@ class MainProfileController: UIViewController, UITableViewDelegate, UITableViewD
         super.viewDidLoad()
         configPhoto()
         counters()
+        getWall()
     }
     
-//    MARK: настраиваем Counters
+    //    MARK: Получаем стену
+    private func getWall() {
+        WallNetworkService.getWall(id: id) {[weak self] (wall) in
+            self?.wall = wall
+            self?.wallTableView.reloadData()
+        }
+        print(wall)
+    }
+    
+    
+    //    MARK: настраиваем Counters
     private func counters() {
           self.countFriendsLabel.isHidden = true
           self.countGroupsLabel.isHidden = true
@@ -84,17 +98,44 @@ class MainProfileController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        switch indexPath.row {
+        switch tableView {
             
-        case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "MainViewCell", for: indexPath) as! MainViewCell
-            cell.configure(id: id)
-            cell.id = id
-            return cell
+        case tableViewProf:
             
-        default:
-            return UITableViewCell()
+            switch indexPath.row {
+                
+            case 0:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "MainViewCell", for: indexPath) as! MainViewCell
+                cell.configure(id: id)
+                cell.id = id
+                return cell
+                
+            default:
+                return UITableViewCell()
+            }
+            
+        case wallTableView:
+            
+            switch indexPath.row {
+                
+            case 0:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "WallSourceCell", for: indexPath) as! WallSourceCell
+                cell.sourceName.text = name
+                cell.sourceImg.kf.setImage(with: URL(string: photo))
+                return cell
+            case 1:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "WallTextCell", for: indexPath) as! WallTextCell
+//                cell.wallText.text = wall[indexPath.section].text
+                return cell
+            default:
+                return UITableViewCell()
+            }
+            
+             default:
+               return UITableViewCell()
         }
+       
+      
         
     }
     
@@ -110,3 +151,5 @@ class MainProfileController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
 }
+
+

@@ -35,6 +35,10 @@
 		D41B759523354D650007E317 /* TextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41B759423354D650007E317 /* TextCell.swift */; };
 		D41B759723354D990007E317 /* LikesCommetsViewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41B759623354D990007E317 /* LikesCommetsViewsCell.swift */; };
 		D41B759923354DC50007E317 /* MediaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41B759823354DC50007E317 /* MediaCell.swift */; };
+		D429E53A23636A2900752EA3 /* WallNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D429E53923636A2900752EA3 /* WallNetworkService.swift */; };
+		D429E53C23636B2B00752EA3 /* Wall.swift in Sources */ = {isa = PBXBuildFile; fileRef = D429E53B23636B2B00752EA3 /* Wall.swift */; };
+		D429E53E236371E100752EA3 /* WallSourceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D429E53D236371E100752EA3 /* WallSourceCell.swift */; };
+		D429E5412363792300752EA3 /* WallTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D429E5402363792300752EA3 /* WallTextCell.swift */; };
 		D48A12F42348E9310005F5BE /* ProfileNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48A12F32348E9310005F5BE /* ProfileNetworkService.swift */; };
 		D48A12F62348E9C90005F5BE /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48A12F52348E9C90005F5BE /* Profile.swift */; };
 		D48A1300234FBC850005F5BE /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48A12FF234FBC850005F5BE /* ProfileController.swift */; };
@@ -75,6 +79,10 @@
 		D41B759423354D650007E317 /* TextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCell.swift; sourceTree = "<group>"; };
 		D41B759623354D990007E317 /* LikesCommetsViewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesCommetsViewsCell.swift; sourceTree = "<group>"; };
 		D41B759823354DC50007E317 /* MediaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCell.swift; sourceTree = "<group>"; };
+		D429E53923636A2900752EA3 /* WallNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallNetworkService.swift; sourceTree = "<group>"; };
+		D429E53B23636B2B00752EA3 /* Wall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wall.swift; sourceTree = "<group>"; };
+		D429E53D236371E100752EA3 /* WallSourceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallSourceCell.swift; sourceTree = "<group>"; };
+		D429E5402363792300752EA3 /* WallTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallTextCell.swift; sourceTree = "<group>"; };
 		D48A12F32348E9310005F5BE /* ProfileNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNetworkService.swift; sourceTree = "<group>"; };
 		D48A12F52348E9C90005F5BE /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		D48A12FF234FBC850005F5BE /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
@@ -173,6 +181,7 @@
 				D41B74CD231543200007E317 /* FriendCollectionCell.swift */,
 				D41B759323354D1D0007E317 /* NewsCells */,
 				D48A12EC2348E6320005F5BE /* ProfileCells */,
+				D429E53F236371F000752EA3 /* WallCells */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -184,6 +193,7 @@
 				D41B74D62315643E0007E317 /* Group.swift */,
 				D41B74D4231564150007E317 /* News.swift */,
 				D48A12F52348E9C90005F5BE /* Profile.swift */,
+				D429E53B23636B2B00752EA3 /* Wall.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -193,6 +203,7 @@
 			children = (
 				D41B74B3230B4CD90007E317 /* NetworkService.swift */,
 				D48A12F32348E9310005F5BE /* ProfileNetworkService.swift */,
+				D429E53923636A2900752EA3 /* WallNetworkService.swift */,
 				D41B74BD230F271A0007E317 /* SingleTon.swift */,
 				D41B74E2231C204B0007E317 /* RealmService.swift */,
 				D41B74EA232455FC0007E317 /* extentions.swift */,
@@ -218,6 +229,15 @@
 				D41B759823354DC50007E317 /* MediaCell.swift */,
 			);
 			path = NewsCells;
+			sourceTree = "<group>";
+		};
+		D429E53F236371F000752EA3 /* WallCells */ = {
+			isa = PBXGroup;
+			children = (
+				D429E53D236371E100752EA3 /* WallSourceCell.swift */,
+				D429E5402363792300752EA3 /* WallTextCell.swift */,
+			);
+			path = WallCells;
 			sourceTree = "<group>";
 		};
 		D48A12EC2348E6320005F5BE /* ProfileCells */ = {
@@ -348,6 +368,8 @@
 				D48A12F42348E9310005F5BE /* ProfileNetworkService.swift in Sources */,
 				D41B74B4230B4CD90007E317 /* NetworkService.swift in Sources */,
 				D41B74D72315643E0007E317 /* Group.swift in Sources */,
+				D429E53A23636A2900752EA3 /* WallNetworkService.swift in Sources */,
+				D429E53C23636B2B00752EA3 /* Wall.swift in Sources */,
 				D41B759923354DC50007E317 /* MediaCell.swift in Sources */,
 				D41B74CE231543200007E317 /* FriendCollectionCell.swift in Sources */,
 				D41B74D5231564150007E317 /* News.swift in Sources */,
@@ -358,12 +380,14 @@
 				D48A1308235105A40005F5BE /* InsideViewCell.swift in Sources */,
 				D41B74AF230B45A30007E317 /* WebController.swift in Sources */,
 				D41B74CC231542CD0007E317 /* FriendCollectionController.swift in Sources */,
+				D429E53E236371E100752EA3 /* WallSourceCell.swift in Sources */,
 				D41B74C4230F40CB0007E317 /* GroupsCell.swift in Sources */,
 				D41B74C0230F2FED0007E317 /* FriendCell.swift in Sources */,
 				D41B74C6230F40E70007E317 /* GroupsController.swift in Sources */,
 				D41B74A2230B43D80007E317 /* Vkontakte.xcdatamodeld in Sources */,
 				D41B74EB232455FD0007E317 /* extentions.swift in Sources */,
 				D41B75922335490E0007E317 /* NewsController.swift in Sources */,
+				D429E5412363792300752EA3 /* WallTextCell.swift in Sources */,
 				D41B74BE230F271A0007E317 /* SingleTon.swift in Sources */,
 				D41B749C230B43D80007E317 /* LoginController.swift in Sources */,
 				D41B74E3231C204B0007E317 /* RealmService.swift in Sources */,

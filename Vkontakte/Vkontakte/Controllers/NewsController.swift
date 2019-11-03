@@ -10,16 +10,29 @@ import UIKit
 import RealmSwift
 
 class NewsController: UITableViewController {
-    
+    var photo: String?
+    var gif: String?
     var news = [News]()
-    
+    var textChache: [IndexPath: String] = [:]
     override func viewDidLoad() {
         super.viewDidLoad()
+        
             NetworkService.getNews(sourceID: "groups") { [ weak self ] newss in
                 guard let self = self else { return }
                 self.news = newss
                 self.tableView.reloadData()
             }
+    }
+//    MARK: Настраиваем ячейку чтобы не переиспользовала текст
+    
+    func getTextChache(forIndexPath indexPath: IndexPath, andText text: String) -> String {
+        if let stringText = textChache[indexPath]{
+            return stringText
+        } else {
+            let text = news[indexPath.section]
+            textChache[indexPath] = text.itemText
+            return text.itemText
+        }
     }
     
     // MARK: - Table view data source
@@ -32,12 +45,12 @@ class NewsController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       
-//        let newss = news[section]
-//        if newss.itemText != "" {count += 1}
-//        if newss.photo != "" {count += 1}
-//        if !newss.comments.isEmpty , !newss.itemText.isEmpty  , !newss.likes.isEmpty , !newss.watches.isEmpty  {count += 1}
-       return 4
+        var count = 2
+        let newsCount = news[section]
+        if !newsCount.itemText.isEmpty {count += 1}
+        if !newsCount.photo.isEmpty {count += 1}
+         if !newsCount.gif.isEmpty {count += 1}
+        return 4
         
     }
     
@@ -57,17 +70,13 @@ class NewsController: UITableViewController {
             
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "TextCell", for: indexPath) as? TextCell
-            cell?.configText(news: news[indexPath.section])
+            cell?.textGroupNews.text = getTextChache(forIndexPath: indexPath, andText: news[indexPath.row].itemText)
             return cell!
             
         case 2:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: "MediaCell", for: indexPath) as? MediaCell {
-                cell.photoGroupNews.kf.setImage(with: URL(string: news[indexPath.section].photo))
+             let cell = tableView.dequeueReusableCell(withIdentifier: "MediaCell", for: indexPath) as! MediaCell
+                (cell.photoGroupNews.kf.setImage(with: URL(string: news[indexPath.section].gif)) != nil) || (cell.photoGroupNews.kf.setImage(with: URL(string: news[indexPath.section].photo)) != nil)
                 return cell
-            }
-                return MediaCell()
-            
-            
         case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: "CounterCell", for: indexPath) as?  LikesCommetsViewsCell
                 cell?.comments.text = news[indexPath.section].comments

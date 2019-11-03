@@ -9,10 +9,15 @@
 import UIKit
 
 class WallSourceCell: UITableViewCell {
-
+    
+    @IBOutlet weak var sourceImg: UIImageView!
+    @IBOutlet weak var sourceName: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        sourceImg.kf.indicatorType = .activity
+        sourceImg.layer.cornerRadius = 25
+        sourceImg.layer.masksToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
