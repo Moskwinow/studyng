@@ -18,7 +18,7 @@ class RealmService {
         let realm = try Realm(configuration: configuration)
         try realm.write {
             realm.add(items, update: update)
-            print(configuration.fileURL)
+            print(configuration.fileURL as Any)
         }
     }
     

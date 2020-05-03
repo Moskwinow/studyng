@@ -17,6 +17,7 @@ class WebController: UIViewController {
     @IBOutlet weak var webview: WKWebView! {
         didSet {
             webview.navigationDelegate = self
+            
         }
     }
     
@@ -25,6 +26,7 @@ class WebController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         componets()
+        
         
     }
     
@@ -45,7 +47,7 @@ class WebController: UIViewController {
             componets.host = "oauth.vk.com"
             componets.path = "/authorize"
             componets.queryItems = [
-                URLQueryItem(name: "client_id", value: "7179325"),
+                URLQueryItem(name: "client_id", value: "7446449"),
                 URLQueryItem(name: "display", value: "mobile"),
                 URLQueryItem(name: "redirect_url", value: "https://oauth.vk.com/blank.html"),
                 URLQueryItem(name: "scope", value: "262150,wall,friends,photos,groups,email") ,
@@ -72,6 +74,7 @@ extension WebController: WKNavigationDelegate {
             return
         }
         
+        
         let params = fragment
             .components(separatedBy: "&")
             .map { $0.components(separatedBy: "=") }
@@ -84,8 +87,11 @@ extension WebController: WKNavigationDelegate {
                 return dict
         }
         
+       
+        
        guard let token = params["access_token"],
         let userId = params["user_id"],
+        
         
         let intUserId = Int(userId)
         

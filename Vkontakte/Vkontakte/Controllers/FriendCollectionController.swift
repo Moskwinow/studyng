@@ -16,7 +16,7 @@ class FriendCollectionController: UICollectionViewController {
     fileprivate var notification: NotificationToken?
     
     
-    let dispatch = DispatchGroup()
+    
     let indicator: UIActivityIndicatorView = UIActivityIndicatorView()
    
     override func viewDidLoad() {

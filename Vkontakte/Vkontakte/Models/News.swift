@@ -27,8 +27,8 @@ class News: Object {
     
    convenience init(_ json: JSON) {
         self.init()
-        self.gif = json["attachments"]["doc"]["ext"]["url"].stringValue
-        self.photo = json["attachments"][0]["photo"]["sizes"][3]["url"].stringValue
+        self.gif = json["attachments"][0]["doc"]["url"].stringValue
+        self.photo = json["attachments"][0]["photo"]["sizes"][4]["url"].stringValue
         self.itemText = json["text"].stringValue
         self.type = json["type"].stringValue
         self.sourceID = json["source_id"].intValue
@@ -42,4 +42,5 @@ class News: Object {
     override static  func primaryKey() -> String {
         return "sourceID"
     }
+    
 }

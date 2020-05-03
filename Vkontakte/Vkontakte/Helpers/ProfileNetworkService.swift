@@ -46,6 +46,7 @@ class ProfileNetworkService {
                        
                        dispatchGroup.notify(queue: .main) {
                            completion(profile)
+                        print(profile)
                        }
                    })
                    

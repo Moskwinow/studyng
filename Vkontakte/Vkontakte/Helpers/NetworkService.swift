@@ -182,9 +182,10 @@ class NetworkService {
             case .success(let value):
 
                 let json = JSON(value)
-                let newsJson = json["response"]["items"].arrayValue 
+                let newsJson = json["response"].arrayValue 
                 let newsPost = newsJson.map {News($0)}
                 let filter = newsPost.filter {$0.type == "post"}
+                print(newsPost)
                 completion(filter)
             case .failure(let error):
                 completion(error as! [News])
